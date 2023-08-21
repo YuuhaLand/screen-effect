@@ -1,0 +1,46 @@
+{
+  "namespace": "toast_screen",
+
+  "toast_screen_content": {
+    "controls": [
+      { "content_log_panel@content_log.content_log_panel": {} },
+      { "perf_turtle_panel@perf_turtle.perf_turtle_panel": {} },
+
+      {
+        "ose_visible_toggle@ose_common.ose_visible_toggle": {}
+      },
+      {
+        "ose_settings@ose_controls.ose_settings": {}
+      },
+      {
+        "ose_controls@ose_controls.ose_controls_panel": {}
+      },
+
+      {
+        "font_property_panel": {
+          "type": "panel",
+          "size": [ 0, 0 ],
+          "property_bag": {
+            "#font_type": "classic"
+          }
+        }
+      }
+    ]
+  },
+
+  "toast_screen@common.base_screen": {
+    "send_telemetry": false,
+    "screen_not_flushable": true,
+    "render_game_behind": true,
+    "is_showing_menu": false,
+    "is_modal": true,
+    "low_frequency_rendering": true,
+    "should_steal_mouse": false,
+    "render_only_when_topmost": false,
+    "screen_draws_last": true,
+    "always_accepts_input": true,
+    "$screen_content": "toast_screen.toast_screen_content",
+    "$screen_animations": [],
+    "$use_loading_bars": false
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "namespace": "ose_common",
+
+  "ose_toggle_image": {
+    "type": "image",
+    "size": [ 16, 16 ],
+    "texture": "textures/ui/osctexture/toggletoggle",
+    "controls": [
+      {
+        "back": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "size": [ 16, 16 ],
+          "color": [ 0, 0, 0 ],
+          "layer": -1,
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "ose_visible_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "ose_toggle_off_hover@ose_common.ose_toggle_off": {
+    "$toggle_color": [ 0.000, 0.749, 0.114 ]
+  },
+
+  "ose_toggle_on@ose_common.ose_toggle_off": {
+    "$toggle_texture|default": "textures/ui/osctexture/toggle_on"
+  },
+
+  "ose_toggle_on_hover@ose_common.ose_toggle_off": {
+    "$toggle_texture|default": "textures/ui/osctexture/toggle_on",
+    "$toggle_color": [ 0.000, 0.749, 0.114 ]
+  },
+
+  "ose_toggle_off": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ "100%" , 10 ],
+    "$toggle_texture|default": "textures/ui/osctexture/toggle_off",
+    "$toggle_text|default": "",
+    "$toggle_color|default": [ 1, 1, 1 ],
+    "controls": [
+      {
+        "toggle_image": {
+          "type": "image",
+          "size": [ 20, 10 ],
+          "texture": "$toggle_texture",
+          "color": "$toggle_color"
+        }
+      },
+      {
+        "padding": {
+          "type": "panel",
+          "size": [ 2, 0 ]
+        }
+      },
+      {
+        "toggle_label": {
+          "type": "label",
+          "size": [ "fill", 10 ],
+          "text": "$toggle_text",
+          "color": "$toggle_color"
+        }
+      }
+    ]
+  },
+
+  "ose_toggle@common.toggle": {
+    "size": [ "100%", 12 ],
+    "offset": [ -2, 2 ],
+    "anchor_to": "top_right",
+    "anchor_from": "top_right",
+    "$toggle_name": "ose_toggle",
+    "focus_enabled": false,
+    "layer": 13,
+
+    "$unchecked_control": "ose_common.ose_toggle_off",
+    "$unchecked_hover_control": "ose_common.ose_toggle_off_hover",
+    "$unchecked_locked_control": "ose_common.ose_toggle_off",
+    "$unchecked_locked_hover_control": "ose_common.ose_toggle_off_hover",
+    "$checked_control": "ose_common.ose_toggle_on",
+    "$checked_hover_control": "ose_common.ose_toggle_on_hover",
+    "$checked_locked_control": "ose_common.ose_toggle_on",
+    "$checked_locked_hover_control": "ose_common.ose_toggle_on_hover",
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_secondary_select",
+        "to_button_id": "button.menu_select",
+        "mapping_type": "pressed"
+      }
+    ]
+  },
+  
+  "ose_visible_toggle@common.toggle": {
+    "size": [ 16, 16 ],
+    "offset": [ -2, 2 ],
+    "anchor_to": "top_right",
+    "anchor_from": "top_right",
+    "$toggle_name": "ose_toggle",
+    "focus_enabled": false,
+    "layer": 300,
+
+    "$unchecked_control": "common.empty_panel",
+    "$unchecked_hover_control": "ose_common.ose_toggle_image",
+    "$unchecked_locked_control": "common.empty_panel",
+    "$unchecked_locked_hover_control": "common.empty_panel",
+    "$checked_control": "ose_common.ose_toggle_image",
+    "$checked_hover_control": "ose_common.ose_toggle_image",
+    "$checked_locked_control": "ose_common.ose_toggle_image",
+    "$checked_locked_hover_control": "ose_common.ose_toggle_image",
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_secondary_select",
+        "to_button_id": "button.menu_select",
+        "mapping_type": "pressed"
+      }
+    ]
+  },
+
+  "ose_setting_header": {
+    "type": "label",
+    "size": [ "100%", 12 ],
+    "text": "('§a《' + $text + '》')",
+    "text_alignment": "center",
+    "$text": ""
+  },
+
+  "debug_label": {
+    "type": "label",
+    "size": [ "100%", "default" ],
+    "$text|default": "",
+    "text": "('§　' + $text)",
+    "font_type": "#font_type",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "font_property_panel",
+        "source_property_name": "#font_type",
+        "target_property_name": "#font_type"
+      }
+    ]
+  },
+
+  "debug_back_label@ose_common.debug_label": {
+    "size": [ "default", "default" ],
+    "controls": [
+      {
+        "back": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "size": [ "100% + 2px", "100%" ],
+          "color": [ 0, 0, 0 ],
+          "alpha": 0.5,
+          "layer": -1
+        }
+      }
+    ]
+  },
+
+  "debug_back_label_right": {
+    "type": "panel",
+    "size": [ "100%", "100%c" ],
+    "controls": [
+      {
+        "label@ose_common.debug_back_label": {
+          "anchor_from": "top_right",
+          "anchor_to": "top_right"
+        }
+      }
+    ]
+  },
+
+  "boolean_show": {
+    "type": "stack_panel",
+    "size": [ "100%c", 10 ],
+    "orientation": "horizontal",
+    "$test_raw|default": "$nx_os",
+    "$test_name|default": "nx_os",
+    "controls": [
+      {
+        "true@ose_common.debug_back_label": {
+          "$text": "('$' + $test_name + ': §aTrue')",
+          "ignored": "(not $test_raw)"
+        }
+      },
+      {
+        "false@ose_common.debug_back_label": {
+          "$text": "('$' + $test_name + ': §cFalse')",
+          "ignored": "$test_raw"
+        }
+      }
+    ]
+  },
+
+  "boolean_show_right": {
+    "type": "panel",
+    "size": [ "100%", "100%c" ],
+    "$text|default": "",
+    "controls": [
+      {
+        "label@ose_common.boolean_show": {
+          "anchor_from": "top_right",
+          "anchor_to": "top_right"
+        }
+      }
+    ]
+  },
+
+  "rainbow_1": {
+    "anim_type": "color",
+    "duration": 3,
+    "from": [ 1, 0, 0 ],
+    "to": [ 1, 1, 0 ],
+    "next": "@ose_common.rainbow_2"
+  },
+  "rainbow_2": {
+    "anim_type": "color",
+    "duration": 3,
+    "from": [ 1, 1, 0 ],
+    "to": [ 0, 1, 0 ],
+    "next": "@ose_common.rainbow_3"
+  },
+  "rainbow_3": {
+    "anim_type": "color",
+    "duration": 3,
+    "from": [ 0, 1, 0 ],
+    "to": [ 0, 1, 1 ],
+    "next": "@ose_common.rainbow_4"
+  },
+  "rainbow_4": {
+    "anim_type": "color",
+    "duration": 3,
+    "from": [ 0, 1, 1 ],
+    "to": [ 0, 0, 1 ],
+    "next": "@ose_common.rainbow_5"
+  },
+  "rainbow_5": {
+    "anim_type": "color",
+    "duration": 3,
+    "from": [ 0, 0, 1 ],
+    "to": [ 1, 0, 1 ],
+    "next": "@ose_common.rainbow_6"
+  },
+  "rainbow_6": {
+    "anim_type": "color",
+    "duration": 3,
+    "from": [ 1, 0, 1 ],
+    "to": [ 1, 0, 0 ],
+    "next": "@ose_common.rainbow_1"
+  },
+
+  "array_back_label_right": {
+    "type": "panel",
+    "size": [ "100%", 10 ],
+    "$text|default": "",
+    "controls": [
+      {
+        "text": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%c", 10 ],
+          "layer": 2,
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "controls": [
+            {
+              "bou": {
+                "type": "image",
+                "texture": "textures/ui/White",
+                "size": [ 1, 10 ],
+                "color": "@ose_common.rainbow_1"
+              }
+            },
+            {
+              "padding_1": {
+                "type": "panel",
+                "size": [ 1, 0 ]
+              }
+            },
+            {
+              "label": {
+                "type": "label",
+                "text": "$text",
+                "size": [ "default", 10 ],
+                "font_type": "smooth"
+              }
+            },
+            {
+              "padding_2": {
+                "type": "panel",
+                "size": [ 1, 0 ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "back": {
+          "type": "image",
+          "size": [ "100%sm", 10 ],
+          "texture": "textures/ui/White",
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "layer": 1,
+          "color": [ 0, 0, 0 ],
+          "alpha": 0.7
+        }
+      }
+    ]
+  }
+}

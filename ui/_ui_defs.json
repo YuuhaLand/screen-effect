@@ -1,0 +1,6 @@
+{
+	"ui_defs": [
+		"ui/ose_assets.json",
+		"ui/ose_controls.json"
+	]
+}

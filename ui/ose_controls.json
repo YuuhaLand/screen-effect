@@ -1,0 +1,745 @@
+{
+  "namespace": "ose_controls",
+	
+	"ose_settings": {
+		"type": "image",
+		"texture": "textures/ui/White",
+		"size": [ 130, 200 ],
+		"offset": [ -18, 2 ],
+		"color": [ 0, 0, 0 ],
+		"alpha": 0.8,
+		"layer": 300,
+		"anchor_to": "top_right",
+		"anchor_from": "top_right",
+		"bindings": [
+			{
+				"binding_type": "view",
+				"source_control_name": "ose_visible_toggle",
+				"source_property_name": "#toggle_state",
+				"target_property_name": "#visible"
+			}
+		],
+		"controls": [
+			{
+				"settings_stack": {
+					"type": "stack_panel",
+					"size": [ "100% - 2px", "100% - 2px" ],
+					"controls": [
+						{
+							"header1@ose_common.ose_setting_header": {
+								"$text": "GUI"
+							}
+						},
+						{
+							"pointer_toggle@ose_common.ose_toggle": {
+								"$toggle_name": "pointer_toggle",
+								"$toggle_text": "ポインター",
+								"$toggle_default_state": false
+							}
+						},
+						{
+							"fake_preview_debug@ose_common.ose_toggle": {
+								"ignored": "$pre_release",
+								"$toggle_name": "fake_preview_debug",
+								"$toggle_text": "偽Previewデバッグ画面",
+								"$toggle_default_state": false
+							}
+						},
+						{
+							"preview_debug@ose_common.ose_toggle": {
+								"ignored": "(not $pre_release)",
+								"$toggle_name": "preview_debug",
+								"$toggle_text": "Previewデバッグ画面",
+								"$toggle_default_state": false
+							}
+						},
+						{
+							"fake_f3_debug@ose_common.ose_toggle": {
+								"$toggle_name": "fake_f3_debug",
+								"$toggle_text": "偽F3デバッグ画面",
+								"$toggle_default_state": false
+							}
+						},
+						{
+							"cheat_gui_toggle@ose_common.ose_toggle": {
+								"$toggle_name": "cheat_gui",
+								"$toggle_text": "チート風のGUI",
+								"$toggle_default_state": false
+							}
+						},
+						{
+							"header1@ose_common.ose_setting_header": {
+								"$text": "画面効果"
+							}
+						},
+						{
+							"ganma_light_toggle@ose_common.ose_toggle": {
+								"$toggle_name": "ganma_light_toggle",
+								"$toggle_text": "CEガンマ ライト",
+								"$toggle_default_state": false
+							}
+						},
+						{
+							"ganma_dark_toggle@ose_common.ose_toggle": {
+								"$toggle_name": "ganma_dark_toggle",
+								"$toggle_text": "CEガンマ ダーク",
+								"$toggle_default_state": false
+							}
+						},
+						{
+							"crack_screen_toggle@ose_common.ose_toggle": {
+								"$toggle_name": "crack_screen_toggle",
+								"$toggle_text": "液晶割れ",
+								"$toggle_default_state": false
+							}
+						}
+					]
+				}
+			}
+		]
+	},
+
+	"ose_controls_panel": {
+		"type": "panel",
+		"size": [ "100%", "100%" ],
+		"layer": 0,
+		"controls": [
+      {
+        "pointer": {
+          "type": "button",
+          "follows_cursor": true,
+          "always_handle_pointer": true,
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "focus_enabled": false,
+          "size": [ "100%", "100%" ],
+          "controls": [
+            {
+              "pointer_button": {
+                "type": "button",
+                "size": [ "100%", "100%" ],
+                "layer": 651156,
+                "sound_name": "random.click",
+                "sound_volume": 0,
+                "sound_pitch": 1.6,
+                "focus_enabled": false,
+                "hover_enabled": false,
+                "controls": [
+                  {
+                    "poipoi": {
+                      "type": "image",
+                      "texture": "textures/ui/poipoi",
+                      "size": [ 3, 3 ]
+                    }
+                  }
+                ],
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "pointer_toggle",
+                    "source_property_name": "#toggle_state",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "preview_debug_fake": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%c" ],
+          "offset": [ 0, 0.5 ],
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "layer": 290,
+          "ignored": "$pre_release",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "fake_preview_debug",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "text1@ose_common.debug_label": {
+                "text": "$fake_preview_text1",
+                "text_alignment": "center",
+                "shadow": true,
+                "font_size": "small",
+                "font_type": "#font_type",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "font_property_panel",
+                    "source_property_name": "#font_type",
+                    "target_property_name": "#font_type"
+                  }
+                ]
+              }
+            },
+            {
+              "padding": { "type": "panel", "size": [ 0, 1 ]}
+            },
+            {
+              "text2@ose_common.debug_label": {
+                "text": "$fake_preview_text2",
+                "text_alignment": "center",
+                "shadow": true,
+                "font_size": "small",
+                "font_type": "#font_type",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "font_property_panel",
+                    "source_property_name": "#font_type",
+                    "target_property_name": "#font_type"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "preview_debug_renderer": {
+          "type": "custom",
+          "renderer": "debug_screen_renderer",
+          "layer": 290,
+          "ignored": "(not $pre_release)",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "preview_debug",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "f3_debug": {
+          "type": "panel",
+          "size": [ "100% - 3px", "100%" ],
+          "offset": [ 0, 0.5 ],
+          "layer": 290,
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "fake_f3_debug",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "left_texts": {
+                "type": "stack_panel",
+                "size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "text1@ose_common.debug_back_label": {
+                      "$text": "('Minecraft v' + $minecraft_version)"
+                    }
+                  },
+                  {
+                    "client_info": {
+                      "type": "stack_panel",
+                      "size": [ "100%", "100%c" ],
+                      "controls": [
+                        {
+                          "platform": {
+                            "type": "stack_panel",
+                            "orientation": "horizontal",
+                            "size": [ "100%", 10 ],
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "controls": [
+                              {
+                                "windows@ose_common.debug_back_label": {
+                                  "$text": "Device: Windows10",
+                                  "ignored": "(not $win10_edition)"
+                                }
+                              },
+                              {
+                                "android@ose_common.debug_back_label": {
+                                  "$text": "Device: Android",
+                                  "ignored": "(not $is_android)"
+                                }
+                              },
+                              {
+                                "ios@ose_common.debug_back_label": {
+                                  "$text": "Device: iOS",
+                                  "ignored": "(not $is_ios)" 
+                                }
+                              },
+                              {
+                                "fire_tv@ose_common.debug_back_label": {
+                                  "$text": "Device: FireTV",
+                                  "ignored": "(not $fire_tv)"
+                                }
+                              },
+                              {
+                                "osx_edition@ose_common.debug_back_label": {
+                                  "$text": "Device: Mac OS",
+                                  "ignored": "(not $osx_edition)"
+                                }
+                              },
+                              {
+                                "nx_os@ose_common.debug_back_label": {
+                                  "$text": "Device: Nintendo Switch",
+                                  "ignored": "(not $nx_os)"
+                                }
+                              },
+                              {
+                                "ps4@ose_common.debug_back_label": {
+                                  "$text": "Device: PlayStation4",
+                                  "ignored": "(not $is_ps4)"
+                                }
+                              },
+                              {
+                                "xbox_one@ose_common.debug_back_label": {
+                                  "$text": "Device: Xbox One",
+                                  "ignored": "(not $xbox_one)"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "sousa_hoho": {
+                            "type": "stack_panel",
+                            "orientation": "horizontal",
+                            "size": [ "100%", 10 ],
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "controls": [
+                              {
+                                "mouse@ose_common.debug_back_label": {
+                                  "$text": "Control: Mouse&Keyboard",
+                                  "ignored": "(not $mouse)"
+                                }
+                              },
+                              {
+                                "controler@ose_common.debug_back_label": {
+                                  "$text": "Control: Controler",
+                                  "ignored": "(not $game_pad)"
+                                }
+                              },
+                              {
+                                "touch@ose_common.debug_back_label": {
+                                  "$text": "Control: Touch",
+                                  "ignored": "(not $touch)" 
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "textpadding1": {
+                      "type": "panel",
+                      "size": [ 0, 10 ]
+                    }
+                  },
+                  {
+                    "is_desktop@ose_common.boolean_show": {
+                      "$test_raw|default": "$is_desktop",
+                      "$test_name|default": "is_desktop"
+                    }
+                  },
+                  {
+                    "pocket_edition@ose_common.boolean_show": {
+                      "$test_raw|default": "$pocket_edition",
+                      "$test_name|default": "pocket_edition"
+                    }
+                  },
+                  {
+                    "console_edition@ose_common.boolean_show": {
+                      "$test_raw|default": "$console_edition",
+                      "$test_name|default": "console_edition"
+                    }
+                  },
+                  {
+                    "textpadding2": {
+                      "type": "panel",
+                      "size": [ 0, 10 ]
+                    }
+                  },
+                  {
+                    "microsoft_os@ose_common.boolean_show": {
+                      "$test_raw|default": "$microsoft_os",
+                      "$test_name|default": "microsoft_os"
+                    }
+                  },
+                  {
+                    "apple_os@ose_common.boolean_show": {
+                      "$test_raw|default": "$apple_os",
+                      "$test_name|default": "apple_os"
+                    }
+                  },
+                  {
+                    "google_os@ose_common.boolean_show": {
+                      "$test_raw|default": "$google_os",
+                      "$test_name|default": "google_os"
+                    }
+                  },
+                  {
+                    "textpadding4": {
+                      "type": "panel",
+                      "size": [ 0, 10 ]
+                    }
+                  },
+                  {
+                    "gote_supporter_enabled@ose_common.boolean_show": {
+                      "$test_raw|default": "$gote_supporter_enabled",
+                      "$test_name|default": "gote_supporter_enabled"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "right_texts": {
+                "type": "stack_panel",
+                "size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "text1@ose_common.debug_back_label_right": {
+                      "$text": "Bedrock 64bit"
+                    }
+                  },
+                  {
+                    "text2@ose_common.debug_back_label_right": {
+                      "$text": "('CPU: ' + $cpu_name)"
+                    }
+                  },
+                  {
+                    "textpadding1": {
+                      "type": "panel",
+                      "size": [ 0, 10 ]
+                    }
+                  },
+                  {
+                    "text3@ose_common.debug_back_label_right": {
+                      "$text": "('Display: ' + $screen_size)"
+                    }
+                  },
+                  {
+                    "text3@ose_common.debug_back_label_right": {
+                      "$text": "$gpu_name"
+                    }
+                  },
+                  {
+                    "textpadding2": {
+                      "type": "panel",
+                      "size": [ 0, 10 ]
+                    }
+                  },
+                  {
+                    "build_platform_UWP@ose_common.boolean_show_right": {
+                      "$test_raw": "$build_platform_UWP",
+                      "$test_name": "build_platform_UWP"
+                    }
+                  },
+                  {
+                    "trial@ose_common.boolean_show_right": {
+                      "$test_raw": "$trial",
+                      "$test_name": "trial"
+                    }
+                  },
+                  {
+                    "education_edition@ose_common.boolean_show_right": {
+                      "$test_raw": "$education_edition",
+                      "$test_name": "education_edition"
+                    }
+                  },
+                  {
+                    "pre_release@ose_common.boolean_show_right": {
+                      "$test_raw": "$pre_release",
+                      "$test_name": "pre_release"
+                    }
+                  },
+                  {
+                    "is_publish@ose_common.boolean_show_right": {
+                      "$test_raw": "$is_publish",
+                      "$test_name": "is_publish"
+                    }
+                  },
+                  {
+                    "is_pregame@ose_common.boolean_show_right": {
+                      "$test_raw": "$is_pregame",
+                      "$test_name": "is_pregame"
+                    }
+                  },
+                  {
+                    "textpadding3": {
+                      "type": "panel",
+                      "size": [ 0, 10 ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "ganma_light": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "size": [ "100%", "100%" ],
+          "color": [ 1, 1, 1 ],
+          "alpha": 0.3,
+          "layer": 280,
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "ganma_light_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "ganma_dark": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "size": [ "100%", "100%" ],
+          "color": [ 0, 0, 0 ],
+          "alpha": 0.3,
+          "layer": 280,
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "ganma_dark_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "cheat_gui": {
+          "type": "panel",
+          "size": [ "100%", "100%" ],
+          "layer": 150,
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "cheat_gui_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "arraylist": {
+                "type": "stack_panel",
+                "size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "text1@ose_common.array_back_label_right": {
+                      "$text": "ChestStealer"
+                    }
+                  },
+                  {
+                    "text2@ose_common.array_back_label_right": {
+                      "$text": "AutoArmor"
+                    }
+                  },
+                  {
+                    "text3@ose_common.array_back_label_right": {
+                      "$text": "NameTags"
+                    }
+                  },
+                  {
+                    "text4@ose_common.array_back_label_right": {
+                      "$text": "Velocity [J]"
+                    }
+                  },
+                  {
+                    "text5@ose_common.array_back_label_right": {
+                      "$text": "Tracer [R]"
+                    }
+                  },
+                  {
+                    "text6@ose_common.array_back_label_right": {
+                      "$text": "MidClick"
+                    }
+                  },
+                  {
+                    "text7@ose_common.array_back_label_right": {
+                      "$text": "Criticals"
+                    }
+                  },
+                  {
+                    "text8@ose_common.array_back_label_right": {
+                      "$text": "AntiBot"
+                    }
+                  },
+                  {
+                    "text9@ose_common.array_back_label_right": {
+                      "$text": "ESP [H]"
+                    }
+                  },
+                  {
+                    "text10@ose_common.array_back_label_right": {
+                      "$text": "FastEat"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "tablist": {
+                "type": "image",
+                "size": [ "100%c + 4px", "100%c + 4px" ],
+                "offset": [ 5, 5 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "texture": "textures/ui/White",
+                "color": [ 0, 0, 0 ],
+                "alpha": 0.7,
+                "controls": [
+                  {
+                    "textlabel": {
+                      "type": "label",
+                      "text": "Combat\nVisual\nMovement\nPlayer\nWorld\nMisc\nGui",
+                      "font_type": "smooth"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "crack_screen": {
+          "type": "panel",
+					"size": [ "100%", "100%" ],
+          "layer": 295,
+					"bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "crack_screen_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+					],
+					"controls": [
+						{
+							"line1": {
+								"type": "image",
+								"size": [ 1, "100%" ],
+								"offset": [ "20%", 0 ],
+								"texture": "textures/ui/White",
+								"color": [ 1, 1 ,0 ]
+							}
+						},
+						{
+							"line2": {
+								"type": "image",
+								"size": [ 1, "100%" ],
+								"offset": [ "-20%", 0 ],
+								"texture": "textures/ui/White",
+								"color": [ 1, 0 ,1 ]
+							}
+						},
+						{
+							"line3": {
+								"type": "image",
+								"size": [ 1, "100%" ],
+								"offset": [ "23%", 0 ],
+								"texture": "textures/ui/White",
+								"color": [ 1, 0 ,0 ]
+							}
+						},
+						{
+							"line4": {
+								"type": "image",
+								"size": [ 1, "100%" ],
+								"offset": [ "-24%", 0 ],
+								"texture": "textures/ui/White",
+								"color": [ 0, 1, 1 ]
+							}
+						},
+						{
+							"line5": {
+								"type": "image",
+								"size": [ 1, "100%" ],
+								"offset": [ "4%", 0 ],
+								"texture": "textures/ui/White",
+								"color": [ 0, 0, 1 ]
+							}
+						},
+						{
+							"line6": {
+								"type": "image",
+								"size": [ 1, "100%" ],
+								"offset": [ "37%", 0 ],
+								"texture": "textures/ui/White",
+								"color": [ 0, 0, 1 ]
+							}
+						},
+						{
+							"line7": {
+								"type": "image",
+								"size": [ 1, "100%" ],
+								"offset": [ "-37%", 0 ],
+								"texture": "textures/ui/White",
+								"color": [ 0, 1, 0 ]
+							}
+						},
+						{
+							"line8": {
+								"type": "image",
+								"size": [ 1, "100%" ],
+								"offset": [ "-17%", 0 ],
+								"texture": "textures/ui/White",
+								"color": [ 1, 0, 0 ]
+							}
+						},
+
+						{
+							"crack1": {
+								"type": "image",
+								"size": [ 75, 21 ],
+								"anchor_from": "left_middle",
+								"anchor_to": "left_middle",
+								"offset": [ 0, 10 ],
+								"texture": "textures/ui/osctexture/crack1"
+							}
+						},
+						{
+							"crack2": {
+								"type": "image",
+								"size": [ 128, 52 ],
+								"anchor_from": "top_right",
+								"anchor_to": "top_right",
+								"texture": "textures/ui/osctexture/crack2"
+							}
+						},
+						{
+							"crack3": {
+								"type": "image",
+								"size": [ 87, 39 ],
+								"offset": [ 0, "12%" ],
+								"anchor_from": "top_middle",
+								"anchor_to": "top_middle",
+								"texture": "textures/ui/osctexture/crack3"
+							}
+						}
+					]
+        }
+      }
+		]
+	}
+}

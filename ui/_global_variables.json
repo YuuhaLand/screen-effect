@@ -1,0 +1,23 @@
+{
+  // F3デバッグ画面に表示されるバージョン
+  "$minecraft_version|default": "1.20",
+
+  // F3デバッグ画面に表示されるCPUの名前
+  "$cpu_name|default": "Intel Celeron(R) CPU 3865U @ 1.80GHz",
+
+  // F3デバッグ画面に表示されるGPUの名前
+  "$gpu_name|default": "Intel(R) HD Graphics 610",
+
+  // F3デバッグ画面に表示される画面サイズ
+  "$screen_size|default": "1920x1080",
+
+  // 偽Previewデバッグテキストの１行目
+  "$fake_preview_text1|default": "Release 1.20 [RENDERDRAGON] D3D11 D3D_SM50 Windows 10 UWP Build, Intel(R) HD Graphics 610, Win 10.0.19045.3324",
+
+  // 偽Previewデバッグテキストの２行目
+  "$fake_preview_text2|default": "FPS: 60.0, ServerTime:0.0, Mem:730, Highest Mem:730, Free Mem:6202, GUI Scale: 4.0, Resolution:1920x1008",
+
+
+
+  "$gote_supporter_enabled|default": false
+}

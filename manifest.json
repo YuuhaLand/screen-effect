@@ -1,0 +1,18 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "オンスクリーン効果",
+    "description": "画面効果を追加します！\nby YukaYama0311",
+    "version": [ 1, 0, 0 ],
+    "uuid": "92f4b27b-37b3-47be-9649-ab6840970b76",
+    "min_engine_version": [ 1, 13, 0 ]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "description": "",
+      "version": [ 1, 0, 0 ],
+      "uuid": "0b931836-078c-417e-89d6-38ce80207411"
+    }
+  ]
+}
