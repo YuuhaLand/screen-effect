@@ -1,109 +1,109 @@
 {
   "namespace": "ose_controls",
-	
-	"ose_settings": {
-		"type": "image",
-		"texture": "textures/ui/White",
-		"size": [ 130, 200 ],
-		"offset": [ -18, 2 ],
-		"color": [ 0, 0, 0 ],
-		"alpha": 0.8,
-		"layer": 300,
-		"anchor_to": "top_right",
-		"anchor_from": "top_right",
-		"bindings": [
-			{
-				"binding_type": "view",
-				"source_control_name": "ose_visible_toggle",
-				"source_property_name": "#toggle_state",
-				"target_property_name": "#visible"
-			}
-		],
-		"controls": [
-			{
-				"settings_stack": {
-					"type": "stack_panel",
-					"size": [ "100% - 2px", "100% - 2px" ],
-					"controls": [
-						{
-							"header1@ose_common.ose_setting_header": {
-								"$text": "GUI"
-							}
-						},
-						{
-							"pointer_toggle@ose_common.ose_toggle": {
-								"$toggle_name": "pointer_toggle",
-								"$toggle_text": "ポインター",
-								"$toggle_default_state": false
-							}
-						},
-						{
-							"fake_preview_debug@ose_common.ose_toggle": {
-								"ignored": "$pre_release",
-								"$toggle_name": "fake_preview_debug",
-								"$toggle_text": "偽Previewデバッグ画面",
-								"$toggle_default_state": false
-							}
-						},
-						{
-							"preview_debug@ose_common.ose_toggle": {
-								"ignored": "(not $pre_release)",
-								"$toggle_name": "preview_debug",
-								"$toggle_text": "Previewデバッグ画面",
-								"$toggle_default_state": false
-							}
-						},
-						{
-							"fake_f3_debug@ose_common.ose_toggle": {
-								"$toggle_name": "fake_f3_debug",
-								"$toggle_text": "偽F3デバッグ画面",
-								"$toggle_default_state": false
-							}
-						},
-						{
-							"cheat_gui_toggle@ose_common.ose_toggle": {
-								"$toggle_name": "cheat_gui",
-								"$toggle_text": "チート風のGUI",
-								"$toggle_default_state": false
-							}
-						},
-						{
-							"header1@ose_common.ose_setting_header": {
-								"$text": "画面効果"
-							}
-						},
-						{
-							"ganma_light_toggle@ose_common.ose_toggle": {
-								"$toggle_name": "ganma_light_toggle",
-								"$toggle_text": "CEガンマ ライト",
-								"$toggle_default_state": false
-							}
-						},
-						{
-							"ganma_dark_toggle@ose_common.ose_toggle": {
-								"$toggle_name": "ganma_dark_toggle",
-								"$toggle_text": "CEガンマ ダーク",
-								"$toggle_default_state": false
-							}
-						},
-						{
-							"crack_screen_toggle@ose_common.ose_toggle": {
-								"$toggle_name": "crack_screen_toggle",
-								"$toggle_text": "液晶割れ",
-								"$toggle_default_state": false
-							}
-						}
-					]
-				}
-			}
-		]
-	},
+  
+  "ose_settings": {
+    "type": "image",
+    "texture": "textures/ui/White",
+    "size": [ 130, 200 ],
+    "offset": [ -18, 2 ],
+    "color": [ 0, 0, 0 ],
+    "alpha": 0.8,
+    "layer": 300,
+    "anchor_to": "top_right",
+    "anchor_from": "top_right",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "ose_visible_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "settings_stack": {
+          "type": "stack_panel",
+          "size": [ "100% - 2px", "100% - 2px" ],
+          "controls": [
+            {
+              "header1@ose_common.ose_setting_header": {
+                "$text": "GUI"
+              }
+            },
+            {
+              "pointer_toggle@ose_common.ose_toggle": {
+                "$toggle_name": "pointer_toggle",
+                "$toggle_text": "ポインター",
+                "$toggle_default_state": false
+              }
+            },
+            {
+              "fake_preview_debug@ose_common.ose_toggle": {
+                "ignored": "$pre_release",
+                "$toggle_name": "fake_preview_debug",
+                "$toggle_text": "偽Previewデバッグ画面",
+                "$toggle_default_state": false
+              }
+            },
+            {
+              "preview_debug@ose_common.ose_toggle": {
+                "ignored": "(not $pre_release)",
+                "$toggle_name": "preview_debug",
+                "$toggle_text": "Previewデバッグ画面",
+                "$toggle_default_state": false
+              }
+            },
+            {
+              "fake_f3_debug@ose_common.ose_toggle": {
+                "$toggle_name": "fake_f3_debug",
+                "$toggle_text": "偽F3デバッグ画面",
+                "$toggle_default_state": false
+              }
+            },
+            {
+              "cheat_gui_toggle@ose_common.ose_toggle": {
+                "$toggle_name": "cheat_gui",
+                "$toggle_text": "チート風のGUI",
+                "$toggle_default_state": false
+              }
+            },
+            {
+              "header1@ose_common.ose_setting_header": {
+                "$text": "画面効果"
+              }
+            },
+            {
+              "ganma_light_toggle@ose_common.ose_toggle": {
+                "$toggle_name": "ganma_light_toggle",
+                "$toggle_text": "CEガンマ ライト",
+                "$toggle_default_state": false
+              }
+            },
+            {
+              "ganma_dark_toggle@ose_common.ose_toggle": {
+                "$toggle_name": "ganma_dark_toggle",
+                "$toggle_text": "CEガンマ ダーク",
+                "$toggle_default_state": false
+              }
+            },
+            {
+              "crack_screen_toggle@ose_common.ose_toggle": {
+                "$toggle_name": "crack_screen_toggle",
+                "$toggle_text": "液晶割れ",
+                "$toggle_default_state": false
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
 
-	"ose_controls_panel": {
-		"type": "panel",
-		"size": [ "100%", "100%" ],
-		"layer": 0,
-		"controls": [
+  "ose_controls_panel": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "layer": 0,
+    "controls": [
       {
         "pointer": {
           "type": "button",
@@ -624,122 +624,122 @@
       {
         "crack_screen": {
           "type": "panel",
-					"size": [ "100%", "100%" ],
+          "size": [ "100%", "100%" ],
           "layer": 295,
-					"bindings": [
+          "bindings": [
             {
               "binding_type": "view",
               "source_control_name": "crack_screen_toggle",
               "source_property_name": "#toggle_state",
               "target_property_name": "#visible"
             }
-					],
-					"controls": [
-						{
-							"line1": {
-								"type": "image",
-								"size": [ 1, "100%" ],
-								"offset": [ "20%", 0 ],
-								"texture": "textures/ui/White",
-								"color": [ 1, 1 ,0 ]
-							}
-						},
-						{
-							"line2": {
-								"type": "image",
-								"size": [ 1, "100%" ],
-								"offset": [ "-20%", 0 ],
-								"texture": "textures/ui/White",
-								"color": [ 1, 0 ,1 ]
-							}
-						},
-						{
-							"line3": {
-								"type": "image",
-								"size": [ 1, "100%" ],
-								"offset": [ "23%", 0 ],
-								"texture": "textures/ui/White",
-								"color": [ 1, 0 ,0 ]
-							}
-						},
-						{
-							"line4": {
-								"type": "image",
-								"size": [ 1, "100%" ],
-								"offset": [ "-24%", 0 ],
-								"texture": "textures/ui/White",
-								"color": [ 0, 1, 1 ]
-							}
-						},
-						{
-							"line5": {
-								"type": "image",
-								"size": [ 1, "100%" ],
-								"offset": [ "4%", 0 ],
-								"texture": "textures/ui/White",
-								"color": [ 0, 0, 1 ]
-							}
-						},
-						{
-							"line6": {
-								"type": "image",
-								"size": [ 1, "100%" ],
-								"offset": [ "37%", 0 ],
-								"texture": "textures/ui/White",
-								"color": [ 0, 0, 1 ]
-							}
-						},
-						{
-							"line7": {
-								"type": "image",
-								"size": [ 1, "100%" ],
-								"offset": [ "-37%", 0 ],
-								"texture": "textures/ui/White",
-								"color": [ 0, 1, 0 ]
-							}
-						},
-						{
-							"line8": {
-								"type": "image",
-								"size": [ 1, "100%" ],
-								"offset": [ "-17%", 0 ],
-								"texture": "textures/ui/White",
-								"color": [ 1, 0, 0 ]
-							}
-						},
+          ],
+          "controls": [
+            {
+              "line1": {
+                "type": "image",
+                "size": [ 1, "100%" ],
+                "offset": [ "20%", 0 ],
+                "texture": "textures/ui/White",
+                "color": [ 1, 1 ,0 ]
+              }
+            },
+            {
+              "line2": {
+                "type": "image",
+                "size": [ 1, "100%" ],
+                "offset": [ "-20%", 0 ],
+                "texture": "textures/ui/White",
+                "color": [ 1, 0 ,1 ]
+              }
+            },
+            {
+              "line3": {
+                "type": "image",
+                "size": [ 1, "100%" ],
+                "offset": [ "23%", 0 ],
+                "texture": "textures/ui/White",
+                "color": [ 1, 0 ,0 ]
+              }
+            },
+            {
+              "line4": {
+                "type": "image",
+                "size": [ 1, "100%" ],
+                "offset": [ "-24%", 0 ],
+                "texture": "textures/ui/White",
+                "color": [ 0, 1, 1 ]
+              }
+            },
+            {
+              "line5": {
+                "type": "image",
+                "size": [ 1, "100%" ],
+                "offset": [ "4%", 0 ],
+                "texture": "textures/ui/White",
+                "color": [ 0, 0, 1 ]
+              }
+            },
+            {
+              "line6": {
+                "type": "image",
+                "size": [ 1, "100%" ],
+                "offset": [ "37%", 0 ],
+                "texture": "textures/ui/White",
+                "color": [ 0, 0, 1 ]
+              }
+            },
+            {
+              "line7": {
+                "type": "image",
+                "size": [ 1, "100%" ],
+                "offset": [ "-37%", 0 ],
+                "texture": "textures/ui/White",
+                "color": [ 0, 1, 0 ]
+              }
+            },
+            {
+              "line8": {
+                "type": "image",
+                "size": [ 1, "100%" ],
+                "offset": [ "-17%", 0 ],
+                "texture": "textures/ui/White",
+                "color": [ 1, 0, 0 ]
+              }
+            },
 
-						{
-							"crack1": {
-								"type": "image",
-								"size": [ 75, 21 ],
-								"anchor_from": "left_middle",
-								"anchor_to": "left_middle",
-								"offset": [ 0, 10 ],
-								"texture": "textures/ui/osctexture/crack1"
-							}
-						},
-						{
-							"crack2": {
-								"type": "image",
-								"size": [ 128, 52 ],
-								"anchor_from": "top_right",
-								"anchor_to": "top_right",
-								"texture": "textures/ui/osctexture/crack2"
-							}
-						},
-						{
-							"crack3": {
-								"type": "image",
-								"size": [ 87, 39 ],
-								"offset": [ 0, "12%" ],
-								"anchor_from": "top_middle",
-								"anchor_to": "top_middle",
-								"texture": "textures/ui/osctexture/crack3"
-							}
-						}
-					]
+            {
+              "crack1": {
+                "type": "image",
+                "size": [ 75, 21 ],
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "offset": [ 0, 10 ],
+                "texture": "textures/ui/osctexture/crack1"
+              }
+            },
+            {
+              "crack2": {
+                "type": "image",
+                "size": [ 128, 52 ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "texture": "textures/ui/osctexture/crack2"
+              }
+            },
+            {
+              "crack3": {
+                "type": "image",
+                "size": [ 87, 39 ],
+                "offset": [ 0, "12%" ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "texture": "textures/ui/osctexture/crack3"
+              }
+            }
+          ]
         }
       }
-		]
-	}
+    ]
+  }
 }
